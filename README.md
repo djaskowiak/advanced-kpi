@@ -1,5 +1,5 @@
 # Advanced KPI
-You can download the extension here.
+You can download the extension [here](https://github.com/djaskowiak/advanced-kpi/releases).
 
 # Developing the extension
 If you want to do code changes to the extension follow these simple steps to get going.
