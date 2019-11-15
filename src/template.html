@@ -1,0 +1,97 @@
+<div class="adv-kpi-background" ng-if="layout.prop.background.switch == true" ng-style="backgroundcss"></div>
+<div class="adv-kpi-container" ng-style="KPIPosition">
+    <!-- KPI BOX 1 -->
+    <div class="row adv-kpi-1">
+        <div class="col-xs-12" ng-style="{'text-align' : layout.prop.measure1.align}">
+            <div class="adv-kpi-name"
+                ng-style="{'font-family' : layout.prop.measure1.title.font , 'font-size' : layout.prop.measure1.title.size , 'font-weight' : layout.prop.measure1.title.bold , 'font-style' : layout.prop.measure1.title.italic , 'text-decoration' : layout.prop.measure1.title.underline , 'color' : layout.prop.measure1.title.color.color}">
+                {{layout.prop.measure1.name}}
+            </div>
+
+            <div class="adv-kpi-measure"
+                ng-style="{'font-family' : layout.prop.measure1.kpi.font , 'font-size' : layout.prop.measure1.kpi.size , 'font-weight' : layout.prop.measure1.kpi.bold , 'font-style' : layout.prop.measure1.kpi.italic , 'text-decoration' : layout.prop.measure1.kpi.underline , 'color' : layout.prop.measure1.kpi.color.color}">
+                <div class="adv-kpi-trend-a" ng-class="[layout.prop.measure1.trend.icon]"
+                    ng-if="layout.prop.measure1.trend.side == 'left' && layout.prop.measure1.trend.switch == true">
+                    <span class="lui-icon lui-icon--{{layout.prop.measure1.trend.icon}}"
+                        ng-style="{'color' : layout.prop.measure1.trend.color, 'font-size' : layout.prop.measure1.trend.size}"
+                        aria-hidden="true"></span>
+                </div>
+                {{layout.prop.measure1.fx}}
+                <div class="adv-kpi-trend-b"
+                    ng-if="layout.prop.measure1.trend.side == 'right' && layout.prop.measure1.trend.switch == true">
+                    <span class="lui-icon lui-icon--{{layout.prop.measure1.trend.icon}}"
+                        ng-style="{'color' : layout.prop.measure1.trend.color, 'font-size' : layout.prop.measure1.trend.size}"
+                        aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="{{layout.prop.line.type}}" ng-if="layout.prop.line.switch == true"
+        ng-style="{'color' : layout.prop.line.color.color}">
+
+    <!-- KPI BOX Container -->
+    <div class="row adv-kpi-box"
+        ng-if="layout.prop.measure2.fx !='' || layout.prop.measure3.fx !='' || layout.prop.measure4.fx !=''">
+        <!-- KPI BOX 2 -->
+        <div class="col-xs-4" ng-style="{'text-align' : layout.prop.measure2.align}">
+            <div class="adv-kpi-measure"
+                ng-style="{'font-family' : layout.prop.measure2.kpi.font , 'font-size' : layout.prop.measure2.kpi.size , 'font-weight' : layout.prop.measure2.kpi.bold , 'font-style' : layout.prop.measure2.kpi.italic , 'text-decoration' : layout.prop.measure2.kpi.underline , 'color' : layout.prop.measure2.kpi.color.color}">
+                {{layout.prop.measure2.fx}}
+                <div class="adv-kpi-trend-b"
+                    ng-if="layout.prop.measure2.trend.switch == true">
+                    <span class="lui-icon lui-icon--{{layout.prop.measure2.trend.icon}}"
+                        ng-style="{'color' : layout.prop.measure2.trend.color, 'font-size' : layout.prop.measure2.trend.size}"
+                        aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="adv-kpi-name"
+                ng-style="{'font-family' : layout.prop.measure2.title.font , 'font-size' : layout.prop.measure2.title.size , 'font-weight' : layout.prop.measure2.title.bold , 'font-style' : layout.prop.measure2.title.italic , 'text-decoration' : layout.prop.measure2.title.underline , 'color' : layout.prop.measure2.title.color.color}">
+                {{layout.prop.measure2.name}}
+            </div>
+        </div>
+
+        <!-- KPI BOX 3 -->
+        <div class="col-xs-4" ng-style="{'text-align' : layout.prop.measure3.align}">
+            <div class="adv-kpi-measure"
+                ng-style="{'font-family' : layout.prop.measure3.kpi.font , 'font-size' : layout.prop.measure3.kpi.size , 'font-weight' : layout.prop.measure3.kpi.bold , 'font-style' : layout.prop.measure3.kpi.italic , 'text-decoration' : layout.prop.measure3.kpi.underline , 'color' : layout.prop.measure3.kpi.color.color}">
+                {{layout.prop.measure3.fx}}
+                <div class="adv-kpi-trend-b"
+                    ng-if="layout.prop.measure3.trend.switch == true">
+                    <span class="lui-icon lui-icon--{{layout.prop.measure3.trend.icon}}"
+                        ng-style="{'color' : layout.prop.measure3.trend.color, 'font-size' : layout.prop.measure3.trend.size}"
+                        aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="adv-kpi-name"
+                ng-style="{'font-family' : layout.prop.measure3.title.font , 'font-size' : layout.prop.measure3.title.size , 'font-weight' : layout.prop.measure3.title.bold , 'font-style' : layout.prop.measure3.title.italic , 'text-decoration' : layout.prop.measure3.title.underline , 'color' : layout.prop.measure3.title.color.color}">
+                {{layout.prop.measure3.name}}
+            </div>
+        </div>
+
+        <!-- KPI BOX 4 -->
+        <div class="col-xs-4" ng-style="{'text-align' : layout.prop.measure4.align}">
+            <div class="adv-kpi-measure"
+                ng-style="{'font-family' : layout.prop.measure4.kpi.font , 'font-size' : layout.prop.measure4.kpi.size , 'font-weight' : layout.prop.measure4.kpi.bold , 'font-style' : layout.prop.measure4.kpi.italic , 'text-decoration' : layout.prop.measure4.kpi.underline , 'color' : layout.prop.measure4.kpi.color.color}">
+                {{layout.prop.measure4.fx}}
+                <div class="adv-kpi-trend-b"
+                    ng-if="layout.prop.measure4.trend.switch == true">
+                    <span class="lui-icon lui-icon--{{layout.prop.measure4.trend.icon}}"
+                        ng-style="{'color' : layout.prop.measure4.trend.color, 'font-size' : layout.prop.measure4.trend.size}"
+                        aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="adv-kpi-name"
+                ng-style="{'font-family' : layout.prop.measure4.title.font , 'font-size' : layout.prop.measure4.title.size , 'font-weight' : layout.prop.measure4.title.bold , 'font-style' : layout.prop.measure4.title.italic , 'text-decoration' : layout.prop.measure4.title.underline , 'color' : layout.prop.measure4.title.color.color}">
+                {{layout.prop.measure4.name}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row adv-kpi-chart-box">
+    <div class="col-xs-12">
+        <div class="adv-kpi-chart" ng-style="ChartOffset"></div>
+    </div>
+</div>

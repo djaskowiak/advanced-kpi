@@ -1,0 +1,105 @@
+.adv-kpi-background{
+    position: absolute;
+    height: calc(100% + 10px);
+    width: calc(100% + 20px);
+    left: -10px;
+}
+
+.adv-kpi-measure {
+    display: -webkit-inline-box;
+    z-index: 10;
+    padding: 0 5px;
+}
+
+.adv-kpi-trend-a, .adv-kpi-trend-b {
+    display: -webkit-inline-box;
+    z-index: 10;
+}
+
+.adv-kpi-name {
+    z-index: 10;
+    padding: 0 5px;
+}
+
+.col-xs-4 {
+    z-index: 10;
+}
+
+.adv-kpi-chart {
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    bottom: 0px;
+    top:5px;
+    height: 100%;
+    width: calc(100% + 20px);
+}
+
+.adv-kpi-container {
+    position: relative;
+}
+.adv-kpi-1 {
+    position: relative;
+    z-index: 100;
+}
+
+.adv-kpi-trend-a > span, .adv-kpi-trend-b > span {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin: auto 5px !important;
+}
+
+.adv-kpi-trend-a > span.lui-icon::before, .adv-kpi-trend-b > span.lui-icon::before {
+    display: block;
+    margin: -0.2em auto 0px;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 0.5em 0 !important;
+    z-index: 10;
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background: #333333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 0.5em 0 !important;
+    z-index: 10;
+}
+
+hr.style-three {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0.5em 0 !important;
+    z-index: 10;
+}
+
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    margin: 0.5em 0 !important;
+    z-index: 10;
+}
+
+.qv-client.qv-card #qv-stage-container #grid .qv-object-advanced-kpi .qv-inner-object .qv-object-header.thin {
+    height: 0px !important;
+}
+
+.qv-object-advanced-kpi .qv-inner-object .qv-object-content-container .qv-object-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+header.qv-object-header .qv-object-advanced-kpi {
+    padding-bottom: 0px !important;
+}

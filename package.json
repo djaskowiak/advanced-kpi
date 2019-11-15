@@ -1,0 +1,40 @@
+{
+  "name": "advanced-kpi",
+  "version": "0.9",
+  "description": "Advanced-KPI is about creating a smart KPI object that fits to 90% of the needs of Qlik Sense users.",
+  "homepage": "",
+  "repository": "https://github.com/djaskowiak/advanced-kpi",
+  "author": "Dennis Jaskowiak",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp build",
+    "build:zip": "gulp zip",
+    "eslint": "eslint src"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/polyfill": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "del": "2.0.2",
+    "eslint": "5.7.0",
+    "eslint-loader": "2.1.1",
+    "gulp": "4.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-zip": "3.0.2",
+    "jquery": "3.4.1",
+    "stylelint": "8.4.0",
+    "stylelint-webpack-plugin": "0.10.5",
+    "webpack": "4.20.2"
+  },
+  "dependencies": {
+    "css-loader": "^2.1.0",
+    "flexboxgrid": "6.3.1",
+    "html-loader": "^0.5.5",
+    "picasso-plugin-q": "0.27.0",
+    "picasso.js": "0.27.0",
+    "style-loader": "^0.23.1"
+  }
+}
