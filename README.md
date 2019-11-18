@@ -2,7 +2,19 @@
 
 This project is about creating a smart KPI object for Qlik Sense that fits to 90% of the needs of the users. From an information design perspective, the KPI object is one of the most important objects when we want to display information. For most of the users it is an indicator providing a variety of information on the first view within a couple of seconds.
 
-You can download the extension [here](https://github.com/djaskowiak/advanced-kpi/releases).
+
+# Installation
+
+You can download the extension [here](https://github.com/djaskowiak/advanced-kpi/releases). Upload to Qlik Sense server or extract to appropriate Qlik Sense Desktop folder.
+
+Qlik Sense Desktop: unzip to a directory under [My Documents]/Qlik/Sense/Extensions.
+
+Qlik Sense Server: import the zip file in the QMC.
+
+
+# Demo
+
+You can [donwload]() a Qlik Sense Demo app to see a couple of possible charts.
 
 # Developing the extension
 
