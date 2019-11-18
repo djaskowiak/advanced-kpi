@@ -1,4 +1,4 @@
-# Advanced KPI <img src="https://github.com/djaskowiak/advanced-kpi/blob/master/assets/advanced-kpi.png" width="45" height="35" />
+# Advanced KPI <img src="https://github.com/djaskowiak/advanced-kpi/blob/master/assets/advanced-kpi.png" width="45" height="35" style="position: relative; top: 6px;" />
 
 You can download the extension [here](https://github.com/djaskowiak/advanced-kpi/releases).
 
