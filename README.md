@@ -26,6 +26,9 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 # Concept
 
 - Top Level KPI
+The "main" KPI can be defined under Measures / Top-Level. 
+![example 3](https://raw.githubusercontent.com/djaskowiak/data/master/measure-top-def.png)
+
 
 - "describing KPIs" left, center and right
 
