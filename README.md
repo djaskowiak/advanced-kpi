@@ -1,4 +1,6 @@
-# Advanced KPI <img src="https://github.com/djaskowiak/advanced-kpi/blob/master/assets/advanced-kpi.png" width="45" height="35" position="relative" top="6px;" />
+# Advanced KPI <img src="https://github.com/djaskowiak/advanced-kpi/blob/master/assets/advanced-kpi.png" width="45" height="35" />
+
+This project is about creating a smart KPI object for Qlik Sense that fits to 90% of the needs of the users. From an information design perspective, the KPI object is one of the most important objects when we want to display information. For most of the users it is an indicator providing a variety of information on the first view within a couple of seconds.
 
 You can download the extension [here](https://github.com/djaskowiak/advanced-kpi/releases).
 
