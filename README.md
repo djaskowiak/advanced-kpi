@@ -11,10 +11,25 @@ You can download the extension [here](https://github.com/djaskowiak/advanced-kpi
 
 * Qlik Sense Server: import the zip file in the QMC.
 
-
 # Demo
 
 You can [donwload](https://github.com/djaskowiak/advanced-kpi/raw/master/demo/Advanced-KPI%20examples.qvf) a Qlik Sense Demo app to see a couple of possible charts.
+
+![example 1](https://raw.githubusercontent.com/djaskowiak/data/master/example-kpi-1.png)
+
+This example shows how results could look like with one single measure by using the possible  configuration options. 
+
+![example 2](https://raw.githubusercontent.com/djaskowiak/data/master/example-kpi-2.png)
+
+It's possible to add more KPIs. They are called "explaining KPIs". You will find them in the accordion under "Measures".
+
+# Concept
+
+- Top Level KPI
+
+- "describing KPIs" left, center and right
+
+- Charts
 
 # Developing the extension
 
