@@ -7,14 +7,14 @@ This project is about creating a smart KPI object for Qlik Sense that fits to 90
 
 You can download the extension [here](https://github.com/djaskowiak/advanced-kpi/releases). Upload to Qlik Sense server or extract to appropriate Qlik Sense Desktop folder.
 
-Qlik Sense Desktop: unzip to a directory under [My Documents]/Qlik/Sense/Extensions.
+* Qlik Sense Desktop: unzip to a directory under [My Documents]/Qlik/Sense/Extensions.
 
-Qlik Sense Server: import the zip file in the QMC.
+* Qlik Sense Server: import the zip file in the QMC.
 
 
 # Demo
 
-You can [donwload]() a Qlik Sense Demo app to see a couple of possible charts.
+You can [donwload](https://github.com/djaskowiak/advanced-kpi/raw/master/demo/Advanced-KPI%20examples.qvf) a Qlik Sense Demo app to see a couple of possible charts.
 
 # Developing the extension
 
