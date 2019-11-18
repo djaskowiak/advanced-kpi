@@ -50,6 +50,17 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
   The look and feel (bar-spacing, colors, grid, width and height, padding etc.) and the chart-typ can be defined under "Minichart"
 ![example 7](https://raw.githubusercontent.com/djaskowiak/data/master/chart-viz-def.png)
 
+  * **Chart-Type:** define the chart-type you want to use
+  * **% Chart Area:** changes the propotion of the chart and the KPI area
+  * **Chart-Grid-Line horizontal:** enables the horizontal chart-grid
+  * **Chart-Grid-Line vertical:** enables the vertical chart-grid
+  * **Measure-Color 1 & 2:** defines the color of the graph
+  * **Chart opacity:** changes the opacity of the whole chart-area
+  * **Bar padding:** defines the spacing between the bars
+  * **First & Second bar alignment:** positioning of the corresponding bars
+  * **Show Reference-Line:** enables the reference-line
+  * **Chart Fullscreen Mode:** sets the chart to fullscreen. It'll cover the whole background of the object.
+
 ## **etc**
 
   You can configure also a couple of other definitions (background, horizontal-ruler etc.). If you like to define the background you can choose from 3 different options:
