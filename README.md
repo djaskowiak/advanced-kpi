@@ -27,7 +27,7 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 
 ## **Top Level KPI**
 
-  The "main" KPI can be defined under Measures / Top-Level. 
+  The "main" KPI can be defined under "Measures / Top-Level". 
 ![example 3](https://raw.githubusercontent.com/djaskowiak/data/master/measure-top-def.png)
   * **Measure Settings:** contains styling options for the measure
   * **Title Settings:** contains styling options for the title of the measure
@@ -36,17 +36,34 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 
 ## **"describing KPIs" left, center and right**
 
-  It's possible to add up to 3 additional measurer. You can configure them also under Measures / Left, Center, Right.
+  It's possible to add up to 3 additional measurer. You can configure them also under "Measures / Left, Center, Right".
 ![example 4](https://raw.githubusercontent.com/djaskowiak/data/master/measure-left-center.right.png)
 
   All Measures (Top, Left, Center and Right) will provide you the following configuration parameters.
 ![example 5](https://raw.githubusercontent.com/djaskowiak/data/master/measure-config-options.png)
----
 
 ## **Charts**
 
+  To create a chart you need at least 1 measure and 1 dimension within the "Data" area. If you like to create a comparison you need to define 2 measures.
+![example 6](https://raw.githubusercontent.com/djaskowiak/data/master/chart-data-def.png)
+
+  The look and feel (bar-spacing, colors, grid, width and height, padding etc.) and the chart-typ can be defined under "Minichart"
+![example 7](https://raw.githubusercontent.com/djaskowiak/data/master/chart-viz-def.png)
 
 ## **etc**
+
+  You can configure also a couple of other definitions (background, horizontal-ruler etc.). If you like to define the background you can choose from 3 different options:
+
+  1. Define color by Color-Picker
+![example 7](https://raw.githubusercontent.com/djaskowiak/data/master/background-color-def.png)
+
+  2. Define color by CSS
+![example 7](https://raw.githubusercontent.com/djaskowiak/data/master/background-css-def.png)
+
+This helps you to define gradients or very specific color configurations. You need to insert the CSS definition as a JSON string.
+```json
+='{"background-image": "linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)"}'
+```
 
 # Developing the extension
 
