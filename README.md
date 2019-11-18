@@ -60,18 +60,18 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
   2. **Define color by CSS**
 ![example 9](https://raw.githubusercontent.com/djaskowiak/data/master/background-css-def.png)
 
-    This helps you to define gradients or very specific color configurations. You need to insert the CSS definition as a JSON string.
+  This helps you to define gradients or very specific color configurations. You need to insert the CSS definition as a JSON string.
     
-    ```json
+    ```
     ='{"background-image": "linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)"}'
     ```
 
   3. **Define a background-picture**
 ![example 10](https://raw.githubusercontent.com/djaskowiak/data/master/background-picture-def.png)
 
-    You can select a picture that is uploaded to the application. To manage the best positioning it is possible to add CSS definition. This also requires a JSON notation. 
+You can select a picture that is uploaded to the application. To manage the best positioning it is possible to add CSS definition. This also requires a JSON notation. 
     
-    ```json
+    ```
     ='{"background-size" : "cover", "background-position" : "center" , "opacity" : "1"}'
     ```
 
