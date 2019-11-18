@@ -36,10 +36,10 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 
 ## **"describing KPIs" left, center and right**
 
-  It's possible to add up to 3 additional measurer. You can configure them also under "Measures / Left, Center, Right".
+  It's possible to add up to 3 additional measurers. For configuration go to "Measures / Left, Center, Right".
 ![example 4](https://raw.githubusercontent.com/djaskowiak/data/master/measure-left-center.right.png)
 
-  All Measures (Top, Left, Center and Right) will provide you the following configuration parameters.
+  All Measures (Top, Left, Center and Right) will provide you with the following configuration parameters.
 ![example 5](https://raw.githubusercontent.com/djaskowiak/data/master/measure-config-options.png)
 
 ## **Charts**
@@ -47,19 +47,19 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
   To create a chart you need at least 1 measure and 1 dimension within the "Data" area. If you like to create a comparison you need to define 2 measures.
 ![example 6](https://raw.githubusercontent.com/djaskowiak/data/master/chart-data-def.png)
 
-  The look and feel (bar-spacing, colors, grid, width and height, padding etc.) and the chart-typ can be defined under "Minichart"
+  The look and feel (bar-spacing, colors, grid, width and height, padding etc.) and the chart-typ can be defined under "Mini-Chart"
 ![example 7](https://raw.githubusercontent.com/djaskowiak/data/master/chart-viz-def.png)
 
   * **Chart-Type:** define the chart-type you want to use
-  * **% Chart Area:** changes the propotion of the chart and the KPI area
+  * **% Chart Area:** changes the proportion  of the chart and the KPI area
   * **Chart-Grid-Line horizontal:** enables the horizontal chart-grid
   * **Chart-Grid-Line vertical:** enables the vertical chart-grid
   * **Measure-Color 1 & 2:** defines the color of the graph
   * **Chart opacity:** changes the opacity of the whole chart-area
-  * **Bar padding:** defines the spacing between the bars
+  * **Bar padding:** defines the spacing between the bar
   * **First & Second bar alignment:** positioning of the corresponding bars
   * **Show Reference-Line:** enables the reference-line
-  * **Chart Fullscreen Mode:** sets the chart to fullscreen. It'll cover the whole background of the object.
+  * **Chart Fullscreen Mode:** sets the chart to fullscreen. It'll cover the whole background-area of the object.
 
 ## **etc**
 
@@ -74,22 +74,26 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
   This helps you to define gradients or very specific color configurations. You need to insert the `CSS` definition as a `JSON` string.
     
   ```
+  example:
+
   ='{"background-image": "linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)"}'
   ```
 
   3. **Define a background-picture**
 ![example 10](https://raw.githubusercontent.com/djaskowiak/data/master/background-picture-def.png)
 
-You can select a picture that is uploaded to the application. To manage the best positioning it is possible to add `CSS` definition. This also requires a `JSON` notation. 
+You can select a picture that has been uploaded to the application. To manage the best positioning it is possible to add `CSS` definition. This also requires `JSON` notation. 
     
   ```
+  example:
+
   ='{"background-size" : "cover", "background-position" : "center" , "opacity" : "1"}'
   ```
 
   4. **Define a horizontal-ruler**
 ![example 11](https://raw.githubusercontent.com/djaskowiak/data/master/horizontal-ruler-def.png)
 
-An `horizontal-ruler` helps you to seperate the main KPI from the rest of the object. To anable a horizontal-ruler just active the check-box under "Appearance / Horizontal-Line". After that you can choose from a couple of pre-defined designs.
+A `horizontal-ruler` helps you to separate the main KPI from the rest of the object. To enable a horizontal-ruler just activate the cswitch under "Appearance / Horizontal-Line". Now you can choose from a couple of pre-defined designs.
 
 
 # Developing the extension
