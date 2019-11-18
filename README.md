@@ -37,6 +37,14 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 
 - **"describing KPIs" left, center and right**
 
+  It's possible to add up to 3 additional measurer. You can configure them also under Measures / Left, Center, Right.
+![example 4](https://raw.githubusercontent.com/djaskowiak/data/master/measure-left-center.right.png)
+
+  All Measures (Top, Left, Center and Right) will provide you the following configuration parameters.
+![example 5](https://raw.githubusercontent.com/djaskowiak/data/master/measure-config-options.png)
+
+
+
 - **Charts**
 
 # Developing the extension
