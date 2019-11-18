@@ -25,7 +25,7 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 
 # Concept
 
-- **Top Level KPI**
+## **Top Level KPI**
 
   The "main" KPI can be defined under Measures / Top-Level. 
 ![example 3](https://raw.githubusercontent.com/djaskowiak/data/master/measure-top-def.png)
@@ -33,8 +33,8 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
   * **Title Settings:** contains styling options for the title of the measure
   * **Trend Settings:** contains options to define an icon to display trending
   * **Sheet-navigation:** contains config to jump to a different sheet
----------------------------
-- **"describing KPIs" left, center and right**
+
+## **"describing KPIs" left, center and right**
 
   It's possible to add up to 3 additional measurer. You can configure them also under Measures / Left, Center, Right.
 ![example 4](https://raw.githubusercontent.com/djaskowiak/data/master/measure-left-center.right.png)
@@ -44,7 +44,10 @@ It's possible to add more KPIs. They are called "explaining KPIs". You will find
 
 
 
-- **Charts**
+## **Charts**
+
+
+## **etc**
 
 # Developing the extension
 
