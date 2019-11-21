@@ -20,7 +20,7 @@ export default {
     //console.log($element);
 
     // getting chart-offset
-    let ChartOffset = ((($element[0].clientHeight/100)*scope.layout.prop.minichart.area)-$element[0].clientHeight)*-1;
+    let ChartOffset = ((($element[0].clientHeight / 100) * scope.layout.prop.minichart.area) - $element[0].clientHeight) * -1;
 
     if (scope.layout.qHyperCube.qDimensionInfo.length > 0 || scope.layout.qHyperCube.qMeasureInfo.length > 0) {
 
@@ -40,7 +40,19 @@ export default {
     //refreshing chart
     if (scope.chart) {
       scope.chart.update();
+      qlik.Promise.resolve();
     }
   },
-  support: { snapshot: false, export: false, exportData: true }
+  support: {
+    snapshot: true,
+    export: true,
+    exportData: true,
+    viewData: function (data) {
+      if (data.qHyperCube.qMeasureInfo[0] && data.qHyperCube.qDimensionInfo[0]) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 };
