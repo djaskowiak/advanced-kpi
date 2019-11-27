@@ -5,6 +5,18 @@ import picassoQ from 'picasso-plugin-q';
 import chartdef from './chartdef';
 
 export default ['$scope', '$element', function ($scope, $element) {
+
+  // Check if app id matches the current app id for In App Pictures
+  let app = qlik.currApp($scope);
+  let id = app.id;
+  let pictureUrl = $scope.layout.prop.background.picture;
+  if(!pictureUrl.includes(id) && !pictureUrl.includes('/content/')) {
+    let split = pictureUrl.split('/');
+    split[2] = id;
+    split = split.join('/');
+    $scope.layout.prop.background.picture = split;
+  }
+
   picasso.use(picassoQ);
 
   const ds = [{

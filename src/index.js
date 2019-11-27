@@ -16,6 +16,7 @@ export default {
     const app = qlik.currApp(this);
     const scope = this.$scope;
     this.$scope.isInEdit = this.options.interactionState == 2;
+    //console.log(app);
     //console.log(scope.layout);
     //console.log($element);
 
@@ -34,8 +35,6 @@ export default {
     } else {
       scope.KPIPosition = { "postion": "relative", "top": "0px" };
     }
-
-
 
     //refreshing chart
     if (scope.chart) {

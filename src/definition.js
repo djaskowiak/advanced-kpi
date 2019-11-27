@@ -1306,7 +1306,7 @@ define(function () {
     component: "media",
     ref: "prop.background.picture",
     type: "string",
-    layoutRef: "backgroundpicture",
+    layoutRef: "prop.background.picture",
     show: function (data) {
       if (data.prop.background.pictureswitch && data.prop.background.cssswitch) { return true; }
     }

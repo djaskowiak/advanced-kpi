@@ -2,6 +2,7 @@
     position: absolute;
     height: calc(100% + 10px);
     width: calc(100% + 20px);
+    top: 0px;
     left: -10px;
 }
 
@@ -14,6 +15,7 @@
 
 .adv-kpi-trend-a, .adv-kpi-trend-b {
     display: -webkit-inline-box;
+    display: ruby-base-container;
     z-index: 10;
 }
 
