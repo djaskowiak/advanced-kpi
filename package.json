@@ -1,6 +1,6 @@
 {
   "name": "advanced-kpi",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Advanced-KPI is about creating a smart KPI object that fits to 90% of the needs of Qlik Sense users.",
   "homepage": "",
   "repository": "https://github.com/djaskowiak/advanced-kpi",
