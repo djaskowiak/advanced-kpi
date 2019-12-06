@@ -6,12 +6,18 @@ define(function () {
     items: {
       dimensions: {
         uses: "dimensions",
+        description: (a, b) => {
+          return "Minichart dimension";
+        },
         disabledRef: '',
         min: 0,
         max: 1
       },
       measures: {
         uses: "measures",
+        description: (a, b) => {
+          return ["Minichart first value", "Minichart second value"][b];
+        },
         min: 0,
         max: 2
       }
