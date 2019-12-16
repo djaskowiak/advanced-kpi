@@ -5,7 +5,6 @@ import template from './template.html';
 import definition from './definition.js';
 import controller from './controller.js';
 import localCSS from './style.css';
-import flexboxgrid from '../node_modules/flexboxgrid/dist/flexboxgrid.min.css';
 
 export default {
   initialProperties: initialProperties,

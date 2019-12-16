@@ -1,6 +1,6 @@
 {
   "name": "advanced-kpi",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Advanced-KPI is about creating a smart KPI object that fits to 90% of the needs of Qlik Sense users.",
   "homepage": "",
   "repository": "https://github.com/djaskowiak/advanced-kpi",
@@ -27,11 +27,10 @@
     "jquery": "3.4.1",
     "stylelint": "8.4.0",
     "stylelint-webpack-plugin": "0.10.5",
-    "webpack": "4.20.2"
+    "webpack": "4.41.3"
   },
   "dependencies": {
     "css-loader": "^2.1.0",
-    "flexboxgrid": "6.3.1",
     "html-loader": "^0.5.5",
     "picasso-plugin-q": "0.27.0",
     "picasso.js": "0.27.0",
