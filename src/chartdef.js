@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 function bar1mes(prop) {
   return {
     scales: {

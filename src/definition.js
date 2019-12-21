@@ -1,4 +1,5 @@
-define(function () {
+/* eslint-disable max-len */
+define(['qlik'], function (qlik, utils) {
   var data = {
     uses: 'data',
     translation: "Common.Data",
@@ -23,7 +24,6 @@ define(function () {
       }
     }
   };
-
 
   /* Measure 1 Settings */
 
@@ -74,7 +74,6 @@ define(function () {
     expression: "optional",
     defaultValue: "QlikView Sans,sans-serif"
   };
-
 
   var measure1KpiStyleBold = {
     label: "bold",
@@ -264,38 +263,6 @@ define(function () {
     }
   };
 
-  var measure1JumpSwitch = {
-    label: "Navigate to sheet",
-    ref: "prop.measure1.jump.switch",
-    type: "string",
-    component: "switch",
-    options: [{
-      value: false,
-      label: "Off"
-    }, {
-      value: true,
-      label: "On"
-    }],
-    defaultValue: "Off"
-  };
-
-  var measure1JumpDropdown = {
-    label: "Select a sheet",
-    type: 'string',
-    ref: 'prop.measure1.jump.sheet',
-    component: 'dropdown',
-    show: function (data) {
-      if (data.prop.measure1.jump.switch) { return true; }
-    },
-    options: async (action, hyperCubeHandler) => {
-      const sheets = await hyperCubeHandler.app.getSheetList();
-      return sheets.map(sheet => ({
-        value: sheet.qInfo.qId,
-        label: sheet.qMeta.title,
-      }));
-    },
-  };
-
   /* Measure 2 Settings */
 
   var measure2Fx = {
@@ -345,7 +312,6 @@ define(function () {
     expression: "optional",
     defaultValue: "QlikView Sans,sans-serif"
   };
-
 
   var measure2KpiStyleBold = {
     label: "bold",
@@ -567,7 +533,6 @@ define(function () {
     defaultValue: "QlikView Sans,sans-serif"
   };
 
-
   var measure3KpiStyleBold = {
     label: "bold",
     ref: "prop.measure3.kpi.bold",
@@ -787,7 +752,6 @@ define(function () {
     expression: "optional",
     defaultValue: "QlikView Sans,sans-serif"
   };
-
 
   var measure4KpiStyleBold = {
     label: "bold",
@@ -1306,7 +1270,6 @@ define(function () {
     }
   };
 
-
   var backgroundpicture = {
     label: "Picture",
     component: "media",
@@ -1334,6 +1297,182 @@ define(function () {
     defaultValue: "",
     show: function (data) {
       if (data.prop.background.cssswitch) { return true; }
+    }
+  };
+
+  var customcssswitch = {
+    label: "Enable custom CSS",
+    component: "switch",
+    ref: "prop.customcss.switch",
+    type: "boolean",
+    options: [{
+      value: true,
+      label: "On"
+    }, {
+      value: false,
+      label: "Off"
+    }],
+    defaultValue: false
+  };
+
+  var customcsscss = {
+    label: "Custom CSS definition",
+    component: "textarea",
+    ref: "prop.customcss.css",
+    type: "string",
+    expression: "optional",
+    defaultValue: "",
+    show: function (data) {
+      if (data.prop.customcss.switch) { return true; }
+    }
+  };
+
+  /* Actions */
+
+  var actionsJumpSwitch = {
+    label: "Navigate to sheet",
+    ref: "prop.actions.jump.switch",
+    type: "string",
+    component: "switch",
+    options: [{
+      value: false,
+      label: "Off"
+    }, {
+      value: true,
+      label: "On"
+    }],
+    defaultValue: "Off"
+  };
+
+  var actionsJumpDropdown = {
+    label: "Select a sheet",
+    type: 'string',
+    ref: 'prop.actions.jump.sheet',
+    component: 'dropdown',
+    show: function (data) {
+      if (data.prop.actions.jump.switch) { return true; }
+    },
+    options: async (action, hyperCubeHandler) => {
+      const sheets = await hyperCubeHandler.app.getSheetList();
+      return sheets.map(sheet => ({
+        value: sheet.qInfo.qId,
+        label: sheet.qMeta.title,
+      }));
+    },
+  };
+
+  var actionsVariableSwitch = {
+    label: "Set Variable",
+    ref: "prop.actions.variable.switch",
+    type: "string",
+    component: "switch",
+    options: [{
+      value: false,
+      label: "Off"
+    }, {
+      value: true,
+      label: "On"
+    }],
+    defaultValue: "Off"
+  };
+
+  var variableList, variableListPromise;
+
+  function getPromiseVariable() {
+    if (!variableListPromise) {
+      variableListPromise = qlik.currApp().createGenericObject({
+        qVariableListDef: {
+          qType: 'variable'
+        }
+      }).then(function (reply) {
+        variableList = reply.layout.qVariableList.qItems.map(function (item) {
+          return {
+            value: item.qName,
+            label: item.qName
+          };
+        });
+        return variableList;
+      });
+    }
+    return variableListPromise;
+  }
+
+  var actionsVariableDropdown = {
+    label: "Select a Variable",
+    type: 'string',
+    ref: 'prop.actions.variable.var',
+    component: 'dropdown',
+    show: function (data) {
+      if (data.prop.actions.variable.switch) { return true; }
+    },
+    options: function () {
+      if (variableList) {
+        return variableList;
+      }
+      return getPromiseVariable();
+    }
+  };
+
+  var actionsVariableSet = {
+    label: "Value",
+    ref: "prop.actions.variable.set",
+    type: "string",
+    expression: "optional",
+    defaultValue: "",
+    show: function (data) {
+      if (data.prop.actions.variable.switch) { return true; }
+    }
+  };
+
+  var actionsBookmarkSwitch = {
+    label: "Apply Bookmark",
+    ref: "prop.actions.bookmark.switch",
+    type: "string",
+    component: "switch",
+    options: [{
+      value: false,
+      label: "Off"
+    }, {
+      value: true,
+      label: "On"
+    }],
+    defaultValue: "Off"
+  };
+
+  var bookmarkList, bookmarkListPromise;
+
+  function getPromiseBookmark() {
+    if (!bookmarkListPromise) {
+      bookmarkListPromise = qlik.currApp().createGenericObject({
+        qBookmarkListDef: {
+          qType: 'bookmark'
+        }
+      }).then(function (reply) {
+        bookmarkList = reply.layout.qBookmarkList.qItems.map(function (item) {
+          return {
+            value: item.qInfo.qId,
+            label: item.qMeta.title
+          };
+        });
+        return bookmarkList;
+      });
+    }
+    return bookmarkListPromise;
+  }
+
+  var actionsBookmarkDropdown = {
+    label: "Select a Bookmark",
+    type: 'string',
+    ref: 'prop.actions.bookmark.name',
+    component: 'dropdown',
+    show: function (data) {
+      if (data.prop.actions.bookmark.switch) { return true; }
+    },
+    options: function () {
+      if (bookmarkList) {
+        return bookmarkList;
+      }
+      return getPromiseBookmark();
     }
   };
 
@@ -1382,6 +1521,22 @@ define(function () {
           backgroundpictureswitch: backgroundpictureswitch,
           backgroundpicture: backgroundpicture,
           paragraphbackground: paragraphbackground
+        }
+      },
+      customCSS: {
+        type: "items",
+        label: "Custom object CSS",
+        items: {
+          customcssswitch: customcssswitch,
+          customcsscss: customcsscss,
+          paragraph: {
+            label: 'You can write pure CSS code. Use "&" as selector to point to this particular object (div[tid="ID"]).',
+            component: 'text'
+          },
+          paragraph1: {
+            label: 'Example: & .qv-inner-object {border: 2px solid green; border-radius: 20px;} ',
+            component: 'text'
+          }
         }
       }
     }
@@ -1449,20 +1604,6 @@ define(function () {
                   measure1TrendIconColor: measure1TrendIconColor,
                   measure1TrendSide: measure1TrendSide,
                   measure1TrendFontSize: measure1TrendFontSize
-                }
-              }
-            }
-          },
-          measure1Jump: {
-            component: "expandable-items",
-            grouped: true,
-            items: {
-              headermeasure1Jump: {
-                type: "items",
-                label: "Sheet-navigation",
-                items: {
-                  measure1JumpSwitch: measure1JumpSwitch,
-                  measure1JumpDropdown: measure1JumpDropdown
                 }
               }
             }
@@ -1658,6 +1799,57 @@ define(function () {
     }
   };
 
+  var actions = {
+    type: "items",
+    label: "Actions",
+    component: "items",
+    items: {
+      actionsJump: {
+        component: "expandable-items",
+        grouped: true,
+        items: {
+          actionsJump: {
+            type: "items",
+            label: "Sheet-navigation",
+            items: {
+              actionsJumpSwitch: actionsJumpSwitch,
+              actionsJumpDropdown: actionsJumpDropdown,
+              paragraph: {
+                label: 'A click on the kpi navigates you to a defined sheet.',
+                component: 'text'
+              }
+            }
+          },
+          actionsVariable: {
+            type: "items",
+            label: "Set Variable",
+            items: {
+              actionsVariableSwitch: actionsVariableSwitch,
+              actionsVariableDropdown: actionsVariableDropdown,
+              actionsVariableSet: actionsVariableSet,
+              paragraph: {
+                label: 'A click on the kpi navigates sets a variable to a defined value',
+                component: 'text'
+              }
+            }
+          },
+          actionsBookmark: {
+            type: "items",
+            label: "Apply Bookmark",
+            items: {
+              actionsBookmarkSwitch: actionsBookmarkSwitch,
+              actionsBookmarkDropdown: actionsBookmarkDropdown,
+              paragraph: {
+                label: 'A click on the kpi applies the selected bookmark.',
+                component: 'text'
+              }
+            }
+          }
+        }
+      }
+    }
+  };
+
   var minichart = {
     type: "items",
     label: "Mini-Chart",
@@ -1712,6 +1904,7 @@ define(function () {
       addons: addons,
       appearance: appearance,
       measures: measures,
+      actions: actions,
       minichart: minichart,
       aboutDefinition: aboutDefinition
     }

@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
 var qlik = window.require('qlik');
 var $ = window.require('jquery');
 import initialProperties from './initial-properties.js';
@@ -15,15 +17,12 @@ export default {
     const app = qlik.currApp(this);
     const scope = this.$scope;
     this.$scope.isInEdit = this.options.interactionState == 2;
-    //console.log(app);
-    //console.log(scope.layout);
-    //console.log($element);
 
     // getting chart-offset
     let ChartOffset = ((($element[0].clientHeight / 100) * scope.layout.prop.minichart.area) - $element[0].clientHeight) * -1;
 
-    if (scope.layout.qHyperCube.qDimensionInfo.length > 0 || scope.layout.qHyperCube.qMeasureInfo.length > 0) {
-
+    if (scope.layout.qHyperCube.qDimensionInfo.length > 0 || scope.layout.qHyperCube.qMeasureInfo.length > 0) 
+    {
       if (scope.layout.prop.minichart.fullscreen) {
         scope.ChartOffset = { "height": ChartOffset + "px)", "opacity": scope.layout.prop.minichart.opacity };
         scope.KPIPosition = { "postion": "relative", "top": "0px" };

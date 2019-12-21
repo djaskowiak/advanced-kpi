@@ -1,16 +1,20 @@
+/* eslint-disable max-len */
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 var qlik = window.require('qlik');
 import $ from 'jquery';
 import picasso from 'picasso.js';
 import picassoQ from 'picasso-plugin-q';
 import chartdef from './chartdef';
 
+// eslint-disable-next-line padded-blocks
 export default ['$scope', '$element', function ($scope, $element) {
 
   // Check if app id matches the current app id for In App Pictures
   let app = qlik.currApp($scope);
   let id = app.id;
   let pictureUrl = $scope.layout.prop.background.picture;
-  if(!pictureUrl.includes(id) && !pictureUrl.includes('/content/')) {
+  if (!pictureUrl.includes(id) && !pictureUrl.includes('/content/')) {
     let split = pictureUrl.split('/');
     split[2] = id;
     split = split.join('/');
@@ -61,18 +65,13 @@ export default ['$scope', '$element', function ($scope, $element) {
 
   //function to create picasso chart
   function createChart() {
-    //setTimeout(function () {
-
     getSettings();
-    //console.log(picassoSettings);
     $scope.chart = picasso.chart({
       element: $element.find('.adv-kpi-chart')[0],
       data: ds,
       settings: picassoSettings,
       beforeRender() { qlik.resize(); }
     });
-
-    // }, 3000);
   }
 
   //Scope for changes within hypercube measures
@@ -129,7 +128,7 @@ export default ['$scope', '$element', function ($scope, $element) {
   $scope.$watch('[layout.prop.background]', function () {
     try {
       if ($scope.layout.prop.background.cssswitch) {
-        if($scope.layout.prop.background.css != '') {
+        if ($scope.layout.prop.background.css != '') {
           $scope.backgroundcss = JSON.parse($scope.layout.prop.background.css);
         }
         if ($scope.layout.prop.background.pictureswitch) {
@@ -143,11 +142,32 @@ export default ['$scope', '$element', function ($scope, $element) {
     }
   }, true);
 
-  //eventlistener for Sheet-navigation
-  $element.find('.adv-kpi-1')[0].addEventListener("click", function () {
-    if ($scope.layout.prop.measure1.jump.switch) {
-      qlik.navigation.gotoSheet($scope.layout.prop.measure1.jump.sheet);
+  //Scope CSS definition customCSS
+  $scope.$watch('[layout.prop.customcss]', function () {
+    try {
+      if ($scope.layout.prop.customcss.switch) {
+        if ($scope.layout.prop.customcss.css != '') {
+          $scope.customcss = $scope.layout.prop.customcss.css.replace(/&/g, "div[tid='" + $scope.layout.qInfo.qId + "']");
+        }
+      }
+    } catch (err) {
+      console.log(err);
     }
-  });
+  }, true);
 
+  //eventlistener for Actions
+  $element.find('.adv-kpi-1')[0].addEventListener("click", function () {
+    //apply sheet-navigation
+    if ($scope.layout.prop.actions.jump.switch) {
+      qlik.navigation.gotoSheet($scope.layout.prop.actions.jump.sheet);
+    }
+    //set variable
+    if ($scope.layout.prop.actions.variable.switch) {
+      app.variable.setContent($scope.layout.prop.actions.variable.var, $scope.layout.prop.actions.variable.set);
+    }
+    //Apply bookmark
+    if ($scope.layout.prop.actions.bookmark.switch) {
+      app.bookmark.apply($scope.layout.prop.actions.bookmark.name);
+    } 
+  });
 }];
