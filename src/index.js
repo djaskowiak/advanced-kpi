@@ -18,6 +18,8 @@ export default {
     const scope = this.$scope;
     this.$scope.isInEdit = this.options.interactionState == 2;
 
+    console.log(scope.layout);
+
     // getting chart-offset
     let ChartOffset = ((($element[0].clientHeight / 100) * scope.layout.prop.minichart.area) - $element[0].clientHeight) * -1;
 

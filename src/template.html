@@ -1,4 +1,10 @@
 <style ng-if="layout.prop.customcss.switch == true" id="{{layout.qInfo.qId}}-css">{{customcss}}</style>
+<div class="adv-kpi-overlay" ng-if="layout.prop.actions.hover == true">
+    <div class="adv-kpi-overlay-details adv-kpi-fadeIn-top">
+        <h3>{{layout.prop.actions.headline}}</h3>
+        <p>{{layout.prop.actions.subline}}</p>
+      </div>
+</div>
 <div class="adv-kpi-background" ng-if="layout.prop.background.switch == true" ng-style="backgroundcss"></div>
 <div class="adv-kpi-container" ng-style="KPIPosition">
     <!-- KPI BOX 1 -->

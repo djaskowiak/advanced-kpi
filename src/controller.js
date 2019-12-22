@@ -155,19 +155,32 @@ export default ['$scope', '$element', function ($scope, $element) {
     }
   }, true);
 
-  //eventlistener for Actions
-  $element.find('.adv-kpi-1')[0].addEventListener("click", function () {
-    //apply sheet-navigation
-    if ($scope.layout.prop.actions.jump.switch) {
-      qlik.navigation.gotoSheet($scope.layout.prop.actions.jump.sheet);
+  //Scope Actions
+  $scope.$watch('[layout.prop.actions]', function () {
+    try {
+      if ($scope.layout.prop.actions.jump.switch || $scope.layout.prop.actions.variable.switch || $scope.layout.prop.actions.bookmark.switch) {
+        $scope.layout.prop.actions.hover = true;
+        //eventlistener for Actions
+        $element.find('.adv-kpi-overlay')[0].addEventListener("click", function () {
+          //apply sheet-navigation
+          if ($scope.layout.prop.actions.jump.switch) {
+            qlik.navigation.gotoSheet($scope.layout.prop.actions.jump.sheet);
+          }
+          //set variable
+          if ($scope.layout.prop.actions.variable.switch) {
+            app.variable.setContent($scope.layout.prop.actions.variable.var, $scope.layout.prop.actions.variable.set);
+          }
+          //Apply bookmark
+          if ($scope.layout.prop.actions.bookmark.switch) {
+            app.bookmark.apply($scope.layout.prop.actions.bookmark.name);
+          }
+        });
+      } else {
+        $scope.layout.prop.actions.hover = false;
+      }
+    } catch (err) {
+      console.log(err);
     }
-    //set variable
-    if ($scope.layout.prop.actions.variable.switch) {
-      app.variable.setContent($scope.layout.prop.actions.variable.var, $scope.layout.prop.actions.variable.set);
-    }
-    //Apply bookmark
-    if ($scope.layout.prop.actions.bookmark.switch) {
-      app.bookmark.apply($scope.layout.prop.actions.bookmark.name);
-    } 
-  });
+  }, true);
+
 }];

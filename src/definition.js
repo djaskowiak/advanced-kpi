@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable max-len */
 define(['qlik'], function (qlik, utils) {
   var data = {
@@ -1476,6 +1477,28 @@ define(['qlik'], function (qlik, utils) {
     }
   };
 
+  var actionsOverlayHeadline = {
+    label: "Overlay title",
+    ref: "prop.actions.headline",
+    type: "string",
+    expression: "optional",
+    defaultValue: "Headline text",
+    show: function (data) {
+      if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch) { return true; }
+    }
+  };
+
+  var actionsOverlaySubline = {
+    label: "Overlay description",
+    ref: "prop.actions.subline",
+    type: "string",
+    expression: "optional",
+    defaultValue: "Subline text",
+    show: function (data) {
+      if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch) { return true; }
+    }
+  };
+
   var sorting = {
     uses: "sorting"
   };
@@ -1804,7 +1827,7 @@ define(['qlik'], function (qlik, utils) {
     label: "Actions",
     component: "items",
     items: {
-      actionsJump: {
+      actionItems: {
         component: "expandable-items",
         grouped: true,
         items: {
@@ -1845,6 +1868,15 @@ define(['qlik'], function (qlik, utils) {
               }
             }
           }
+        }
+      },
+      actionsOverlayHeadline: actionsOverlayHeadline,
+      actionsOverlaySubline: actionsOverlaySubline,
+      paragraph: {
+        label: 'If an action is set you can type in a head- and a subline to describe what is going to happen after clicking on the object.',
+        component: 'text',
+        show: function (data) {
+          if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch) { return true; }
         }
       }
     }
