@@ -97,6 +97,43 @@ You can select a picture that has been uploaded to the application. To manage th
 
 A `horizontal-ruler` helps you to separate the main KPI from the rest of the object. To enable a horizontal-ruler just activate the cswitch under "Appearance / Horizontal-Line". Now you can choose from a couple of pre-defined designs.
 
+  5. **Define "Custom object CSS**
+| Menu |  Object |
+:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_29_29-Window.png)  |  ![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_28_44-Window.png)
+
+You can define "**Custom object CSS**". his gives you the possibility to write CSS for the whole object and sheet. If you like to write specific CSS for just your created object it is possible to use the CSS selector "&". It will be replaced by "**div[tid="objID"]**" to define code that effects just a single object. 
+
+In this example I used the following code to set a border with a radius and to overwrite theme CSS setting:
+  ```
+  example:
+
+  & .qv-inner-object {
+    border: 3px solid #fff;
+    border-radius: 20px;
+} 
+
+& .qv-object-advanced-kpi {
+    border-radius: 25px !important;
+}
+
+& article {
+    border: 0px !important;
+}
+  ```
+
+ 6. **Define "Actions**
+| Menu |  Object |
+:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_27_53-Window.png)  |  ![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_28_27-Window.png)
+
+With the "**Actions**" section it is possible to define events that will be executed as soon as a user clicks on the KPI object. The follwoing funtions are included:
+
+- "**Sheet-navigation**" - jumps to a defined worksheet
+- "**Set Variable**" - sets a variable to a defined value. (It's possible to use an expression to define the value)
+- "**Apply Bookmark**" - applies a selected bookmark
+
+This actions can be combined. Just turn the dedicated switch to on to enable the function. Functions will be executed in a top-down order.
 
 # Developing the extension
 
