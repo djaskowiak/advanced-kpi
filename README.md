@@ -98,6 +98,7 @@ You can select a picture that has been uploaded to the application. To manage th
 A `horizontal-ruler` helps you to separate the main KPI from the rest of the object. To enable a horizontal-ruler just activate the cswitch under "Appearance / Horizontal-Line". Now you can choose from a couple of pre-defined designs.
 
   5. **Define "Custom object CSS**
+
 | Menu |  Object |
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_29_29-Window.png)  |  ![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_28_44-Window.png)
@@ -106,8 +107,6 @@ You can define "**Custom object CSS**". his gives you the possibility to write C
 
 In this example I used the following code to set a border with a radius and to overwrite theme CSS setting:
   ```
-  example:
-
   & .qv-inner-object {
     border: 3px solid #fff;
     border-radius: 20px;
@@ -123,6 +122,7 @@ In this example I used the following code to set a border with a radius and to o
   ```
 
  6. **Define "Actions**
+
 | Menu |  Object |
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_27_53-Window.png)  |  ![](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-23%2019_28_27-Window.png)
