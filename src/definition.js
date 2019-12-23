@@ -122,10 +122,10 @@ define(['qlik'], function (qlik, utils) {
   };
 
   var measure1KpiStyleColor = {
-    ref: "prop.measure1.kpi.color",
     label: "Color",
-    component: "color-picker",
-    type: "object",
+    ref: "prop.measure1.kpi.color.color",
+    type: "string",
+    expression: "optional",
     defaultValue: "#595959"
   };
 
@@ -360,10 +360,10 @@ define(['qlik'], function (qlik, utils) {
   };
 
   var measure2KpiStyleColor = {
-    ref: "prop.measure2.kpi.color",
     label: "Color",
-    component: "color-picker",
-    type: "object",
+    ref: "prop.measure2.kpi.color.color",
+    type: "string",
+    expression: "optional",
     defaultValue: "#595959"
   };
 
@@ -580,10 +580,10 @@ define(['qlik'], function (qlik, utils) {
   };
 
   var measure3KpiStyleColor = {
-    ref: "prop.measure3.kpi.color",
     label: "Color",
-    component: "color-picker",
-    type: "object",
+    ref: "prop.measure3.kpi.color.color",
+    type: "string",
+    expression: "optional",
     defaultValue: "#595959"
   };
 
@@ -800,10 +800,10 @@ define(['qlik'], function (qlik, utils) {
   };
 
   var measure4KpiStyleColor = {
-    ref: "prop.measure4.kpi.color",
     label: "Color",
-    component: "color-picker",
-    type: "object",
+    ref: "prop.measure4.kpi.color.color",
+    type: "string",
+    expression: "optional",
     defaultValue: "#595959"
   };
 
@@ -1342,7 +1342,7 @@ define(['qlik'], function (qlik, utils) {
       value: true,
       label: "On"
     }],
-    defaultValue: "Off"
+    defaultValue: false
   };
 
   var actionsJumpDropdown = {
@@ -1374,7 +1374,7 @@ define(['qlik'], function (qlik, utils) {
       value: true,
       label: "On"
     }],
-    defaultValue: "Off"
+    defaultValue: false
   };
 
   var variableList, variableListPromise;
@@ -1437,7 +1437,7 @@ define(['qlik'], function (qlik, utils) {
       value: true,
       label: "On"
     }],
-    defaultValue: "Off"
+    defaultValue: false
   };
 
   var bookmarkList, bookmarkListPromise;

@@ -182,5 +182,4 @@ export default ['$scope', '$element', function ($scope, $element) {
       console.log(err);
     }
   }, true);
-
 }];
