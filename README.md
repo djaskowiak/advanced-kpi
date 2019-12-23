@@ -3,7 +3,7 @@
 This project is about creating a smart KPI object for Qlik Sense that fits to 90% of the needs of the users. From an information design perspective, the KPI object is one of the most important objects when we want to display information. For most of the users it is an indicator providing a variety of information on the first view within a couple of seconds.
 
 ### Important !
-Please keep in mind, the files you find within the GitHub Repository are the"uncompiled" project files. These files can be downloaded to create your own version of "advanced-kpi". A description can be found here ([Developing the extension](#dev)). Under the ["**Releases**"](https://github.com/djaskowiak/advanced-kpi/releases) tab you can find the compiled version that can be imported into Qlik Sense.
+Please keep in mind, the files you find within the GitHub Repository are the "**uncompiled**" project files. These files can be downloaded to create your own version of "advanced-kpi". A description can be found here ([Developing the extension](#dev)). Under the ["**Releases**"](https://github.com/djaskowiak/advanced-kpi/releases) tab you can find the compiled version. This zip package can be imported into Qlik Sense.
 
 
 # Installation
