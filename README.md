@@ -25,7 +25,13 @@ This example shows how results could look like with one single measure by using 
 
 It's possible to add more KPIs. They are called "explaining KPIs". You will find them in the accordion under "Measures".
 
-# Concept
+# Table of contents
+1. [Concept](#concept)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+
+
+# Concept <a name="concept"></a>
 
 ## **Top Level KPI**
 
