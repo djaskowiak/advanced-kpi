@@ -1,6 +1,4 @@
 /* eslint-disable max-len */
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 var qlik = window.require('qlik');
 import $ from 'jquery';
 import picasso from 'picasso.js';
@@ -153,33 +151,5 @@ export default ['$scope', '$element', function ($scope, $element) {
     } catch (err) {
       console.log(err);
     }
-  }, true);
-
-  //Scope Actions
-  $scope.$watch('[layout.prop.actions]', function () {
-    try {
-      if ($scope.layout.prop.actions.jump.switch || $scope.layout.prop.actions.variable.switch || $scope.layout.prop.actions.bookmark.switch) {
-        $scope.layout.prop.actions.hover = true;
-        //eventlistener for Actions
-        $element.find('.adv-kpi-overlay')[0].addEventListener("click", function () {
-          //apply sheet-navigation
-          if ($scope.layout.prop.actions.jump.switch) {
-            qlik.navigation.gotoSheet($scope.layout.prop.actions.jump.sheet);
-          }
-          //set variable
-          if ($scope.layout.prop.actions.variable.switch) {
-            app.variable.setContent($scope.layout.prop.actions.variable.var, $scope.layout.prop.actions.variable.set);
-          }
-          //Apply bookmark
-          if ($scope.layout.prop.actions.bookmark.switch) {
-            app.bookmark.apply($scope.layout.prop.actions.bookmark.name);
-          }
-        });
-      } else {
-        $scope.layout.prop.actions.hover = false;
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }, true);
+  }, true);  
 }];

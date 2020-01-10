@@ -9,23 +9,23 @@
 .adv-kpi-measure {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
-    z-index: 10;
+    z-index: 2;
     padding: 0 5px;
 }
 
 .adv-kpi-trend-a, .adv-kpi-trend-b {
     display: -webkit-inline-box;
     display: ruby-base-container;
-    z-index: 10;
+    z-index: 2;
 }
 
 .adv-kpi-name {
-    z-index: 10;
+    z-index: 2;
     padding: 0 5px;
 }
 
 .col-xs-4 {
-    z-index: 10;
+    z-index: 2;
 }
 
 .adv-kpi-chart {
@@ -62,7 +62,7 @@ hr.style-one {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     margin: 0.5em 0 !important;
-    z-index: 10;
+    z-index: 2;
 }
 
 hr.style-two {
@@ -71,7 +71,7 @@ hr.style-two {
     background: #333333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
     margin: 0.5em 0 !important;
-    z-index: 10;
+    z-index: 2;
 }
 
 hr.style-three {
@@ -80,15 +80,27 @@ hr.style-three {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     margin: 0.5em 0 !important;
-    z-index: 10;
+    z-index: 2;
 }
 
 hr.style-four {
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-    margin: 0.5em 0 !important;
-    z-index: 10;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0.5em 0 !important;
+  z-index: 2;
+}
+
+hr.style-five {
+  border-top: 1px solid #8c8b8b;
+  margin: 0.5em 0;
+  z-index: 2;
+}
+
+hr.style-six {
+  border-top: 1px dotted #8c8b8b;
+  margin: 0.5em 0;
+  z-index: 2;
 }
 
 .qv-client.qv-card #qv-stage-container #grid .qv-object-advanced-kpi .qv-inner-object .qv-object-header.thin {
@@ -120,7 +132,7 @@ header.qv-object-header .qv-object-advanced-kpi {
   -webkit-transition: all 0.4s ease-in-out 0s;
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
-  z-index: 1;
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -149,7 +161,7 @@ header.qv-object-header .qv-object-advanced-kpi {
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
-  z-index: 3;
+  z-index: 4;
 }
 
 .adv-kpi-overlay-details h3{
@@ -163,16 +175,42 @@ header.qv-object-header .qv-object-advanced-kpi {
 .adv-kpi-overlay-details p{
   color: #fff;
   font-size: 0.8em;
-  z-index: 3;
+  z-index: 4;
 }
 
 .adv-kpi-fadeIn-top{
   top: 20%;
 }
 
+#grid-wrap.sheet-list .qv-object-advanced-kpi .qv-object-content-container {
+   overflow: unset !important; 
+}
+
+.pp-expandable-list .pp-expandable-list .pp-expandable-list-header {
+  background-color: white !important;
+  border-top: 1px solid #e6e6e6 !important;
+  -webkit-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+.pp-header-with-switch-component .switch-container>.label {
+  color: #595959; 
+}
+
+.qv-object-advanced-kpi .requirements-wrapper {
+  position: absolute !important;
+}
+
+.qv-object-advanced-kpi .requirements {
+  text-align: center !important;
+}
+
+.qv-object-advanced-kpi .text {
+  text-align: center !important;
+}
+
+
 /* flexbox start */
-
-
 .container-fluid {
     margin-right: auto;
     margin-left: auto;

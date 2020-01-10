@@ -1,9 +1,9 @@
-/* eslint-disable no-undef */
 /* eslint-disable max-len */
+
 define(['qlik'], function (qlik, utils) {
   var data = {
     uses: 'data',
-    translation: "Common.Data",
+    translation: "Mini-Chart - Data",
     type: "items",
     items: {
       dimensions: {
@@ -18,7 +18,7 @@ define(['qlik'], function (qlik, utils) {
       measures: {
         uses: "measures",
         description: (a, b) => {
-          return ["Minichart first value", "Minichart second value"][b];
+          return ["Minichart first measure", "Minichart second measure"][b];
         },
         min: 0,
         max: 2
@@ -1199,6 +1199,12 @@ define(['qlik'], function (qlik, utils) {
     }, {
       value: "style-four",
       label: "style-four"
+    }, {
+      value: "style-five",
+      label: "style-five"
+    }, {
+      value: "style-six",
+      label: "style-six"
     }],
     defaultValue: "style-one"
   };
@@ -1359,7 +1365,7 @@ define(['qlik'], function (qlik, utils) {
         value: sheet.qInfo.qId,
         label: sheet.qMeta.title,
       }));
-    },
+    }
   };
 
   var actionsVariableSwitch = {
@@ -1884,7 +1890,7 @@ define(['qlik'], function (qlik, utils) {
 
   var minichart = {
     type: "items",
-    label: "Mini-Chart",
+    label: "Mini-Chart - Config",
     component: "items",
     items: {
       minichartType: minichartType,
@@ -1923,6 +1929,10 @@ define(['qlik'], function (qlik, utils) {
       paragraph2: {
         label: 'Advanced KPI is based upon an extension created by Dennis Jaskowiak.',
         component: 'text'
+      },
+      paragraph3: {
+        label: 'Version: 0.1.4',
+        component: 'text'
       }
     }
   };
@@ -1931,13 +1941,13 @@ define(['qlik'], function (qlik, utils) {
     type: "items",
     component: "accordion",
     items: {
+      measures: measures,
       data: data,
+      minichart: minichart,
+      actions: actions,
+      appearance: appearance,
       sorting: sorting,
       addons: addons,
-      appearance: appearance,
-      measures: measures,
-      actions: actions,
-      minichart: minichart,
       aboutDefinition: aboutDefinition
     }
   };
