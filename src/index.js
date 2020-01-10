@@ -48,7 +48,7 @@ export default {
       scope.init = true;
     }
 
-    console.log(scope.layout);
+    //console.log(scope.layout);
 
     // getting chart-offset
     let ChartOffset = ((($element[0].clientHeight / 100) * scope.layout.prop.minichart.area) - $element[0].clientHeight) * -1;
