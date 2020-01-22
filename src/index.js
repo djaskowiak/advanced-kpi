@@ -73,7 +73,7 @@ export default {
 
     //Actions
     try {
-      if (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch) {
+      if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch)) {
         layout.prop.actions.hover = true;
         //eventlistener for Actions
         $element.find('.adv-kpi-overlay').on("click", function () {
