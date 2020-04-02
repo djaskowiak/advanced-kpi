@@ -1236,7 +1236,7 @@ define(['qlik'], function (qlik, utils) {
     type: "boolean",
     options: [{
       value: true,
-      label: "Formular"
+      label: "Formula"
     }, {
       value: false,
       label: "Color Picker"
