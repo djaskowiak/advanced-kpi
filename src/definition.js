@@ -937,12 +937,7 @@ define(['qlik'], function (qlik, utils) {
     }, {
       value: "bar",
       label: "Barchart"
-    },
-    {
-      value: "gauge",
-      label: "Gauge"
-    } 
-    ],
+    }],
     defaultValue: "bar"
   };
 
@@ -1228,7 +1223,7 @@ define(['qlik'], function (qlik, utils) {
     }],
     defaultValue: false
   };
-
+  
   var backgroundswitchfxpick = {
     label: "Mode",
     component: "switch",
@@ -1252,18 +1247,18 @@ define(['qlik'], function (qlik, utils) {
     label: "Color",
     component: "color-picker",
     type: "object",
-    defaultValue: "none",
     show: function (data) {
+      //if (data.prop.background.switch && data.prop.background.cssswitch != true) { return true; }
       if (data.prop.background.switch && data.prop.background.cssswitch != true && data.prop.background.switchfxpick != true) { return true; }
     }
   };
 
   var backgroundcolorfx = {
-    ref: "prop.background.color.color",
+    ref: "prop.background.colorfx",
     label: "Color",
     type: "string",
     expression: "optional",
-    defaultValue: "none",
+    default: "#ffffff",
     show: function (data) {
       if (data.prop.background.switch && data.prop.background.cssswitch != true && data.prop.background.switchfxpick != false) { return true; }
     }
@@ -1311,6 +1306,7 @@ define(['qlik'], function (qlik, utils) {
     ref: "prop.background.picture",
     type: "string",
     layoutRef: "prop.background.picture",
+    defaultValue: "false",
     show: function (data) {
       if (data.prop.background.pictureswitch && data.prop.background.cssswitch) { return true; }
     }

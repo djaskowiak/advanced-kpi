@@ -4,6 +4,7 @@ import initialProperties from './initial-properties.js';
 import template from './template.html';
 import definition from './definition.js';
 import controller from './controller.js';
+// eslint-disable-next-line no-unused-vars
 import localCSS from './style.css';
 
 export default {
@@ -34,6 +35,8 @@ export default {
     const scope = this.$scope;
     this.$scope.isInEdit = this.options.interactionState == 2;
 
+    //console.log(layout);
+
     //Display welcome message
     scope.init = false;
     if (layout.prop.measure1.fx != "" || layout.prop.measure2.fx != "" || layout.prop.measure3.fx != "" || layout.prop.measure4.fx != "") {
@@ -47,8 +50,6 @@ export default {
     } else {
       scope.init = true;
     }
-
-    //console.log(scope.layout);
 
     // getting chart-offset
     let ChartOffset = ((($element[0].clientHeight / 100) * scope.layout.prop.minichart.area) - $element[0].clientHeight) * -1;
@@ -71,9 +72,9 @@ export default {
       qlik.Promise.resolve();
     }
 
-    //Function to create Actions
+    //Actions
     try {
-      if (!scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch)) {
+      if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch)) {
         layout.prop.actions.hover = true;
         //eventlistener for Actions
         $element.find('.adv-kpi-overlay').on("click", function () {
@@ -97,7 +98,5 @@ export default {
       // eslint-disable-next-line no-console
       console.log(err);
     }
-
-
   }
 };

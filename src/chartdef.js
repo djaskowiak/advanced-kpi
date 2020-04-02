@@ -337,8 +337,7 @@ function line2mes(prop) {
   };
 }
 
-function gauge1mes(layout) {
-
+function gauge1mes(prop) {
 }
 
 export default {

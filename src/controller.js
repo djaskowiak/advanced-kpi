@@ -133,7 +133,12 @@ export default ['$scope', '$element', function ($scope, $element) {
           $scope.backgroundcss["background-image"] = 'url(' + $scope.layout.prop.background.picture + ')';
         }
       } else {
-        $scope.backgroundcss = { "background-color": $scope.layout.prop.background.color.color };
+        if($scope.layout.prop.background.switchfxpick){
+          $scope.backgroundcss = { "background-color": $scope.layout.prop.background.colorfx };
+        }
+        if($scope.layout.prop.background.switchfxpick == false){
+          $scope.backgroundcss = { "background-color": $scope.layout.prop.background.color.color };
+        }
       }
     } catch (err) {
       console.log(err);
@@ -151,5 +156,5 @@ export default ['$scope', '$element', function ($scope, $element) {
     } catch (err) {
       console.log(err);
     }
-  }, true);
+  }, true);  
 }];
