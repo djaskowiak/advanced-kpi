@@ -7,7 +7,7 @@
 </div>
 <!-- adv-kpi-print-content -->
 <style ng-if="layout.prop.customcss.switch == true" id="{{layout.qInfo.qId}}-css">{{customcss}}</style>
-<div class="adv-kpi-overlay" ng-if="layout.prop.actions.hover == true">
+<div class="adv-kpi-overlay" ng-show="layout.prop.actions.hover == true">
     <div class="adv-kpi-overlay-details adv-kpi-fadeIn-top">
         <h3>{{layout.prop.actions.headline}}</h3>
         <p>{{layout.prop.actions.subline}}</p>

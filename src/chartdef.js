@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 /* eslint-disable max-len */
 function bar1mes(prop) {
   return {
@@ -336,7 +337,7 @@ function line2mes(prop) {
   };
 }
 
-function gauge1mes(prop) {
+function gauge1mes(layout) {
 
 }
 

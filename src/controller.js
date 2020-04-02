@@ -151,5 +151,5 @@ export default ['$scope', '$element', function ($scope, $element) {
     } catch (err) {
       console.log(err);
     }
-  }, true);  
+  }, true);
 }];

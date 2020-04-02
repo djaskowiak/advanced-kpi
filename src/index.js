@@ -71,9 +71,9 @@ export default {
       qlik.Promise.resolve();
     }
 
-    //Actions
+    //Function to create Actions
     try {
-      if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch)) {
+      if (!scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch)) {
         layout.prop.actions.hover = true;
         //eventlistener for Actions
         $element.find('.adv-kpi-overlay').on("click", function () {
@@ -97,5 +97,7 @@ export default {
       // eslint-disable-next-line no-console
       console.log(err);
     }
+
+
   }
 };

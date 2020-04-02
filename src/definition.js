@@ -937,12 +937,11 @@ define(['qlik'], function (qlik, utils) {
     }, {
       value: "bar",
       label: "Barchart"
-    }
-      /*{
-        value: "gauge",
-        label: "Gauge"
-      }
-    */
+    },
+    {
+      value: "gauge",
+      label: "Gauge"
+    } 
     ],
     defaultValue: "bar"
   };
@@ -1230,6 +1229,24 @@ define(['qlik'], function (qlik, utils) {
     defaultValue: false
   };
 
+  var backgroundswitchfxpick = {
+    label: "Mode",
+    component: "switch",
+    ref: "prop.background.switchfxpick",
+    type: "boolean",
+    options: [{
+      value: true,
+      label: "Formular"
+    }, {
+      value: false,
+      label: "Color Picker"
+    }],
+    defaultValue: false,
+    show: function (data) {
+      if (data.prop.background.switch && data.prop.background.cssswitch != true) { return true; }
+    }
+  };
+
   var backgroundcolor = {
     ref: "prop.background.color",
     label: "Color",
@@ -1237,7 +1254,18 @@ define(['qlik'], function (qlik, utils) {
     type: "object",
     defaultValue: "none",
     show: function (data) {
-      if (data.prop.background.switch && data.prop.background.cssswitch != true) { return true; }
+      if (data.prop.background.switch && data.prop.background.cssswitch != true && data.prop.background.switchfxpick != true) { return true; }
+    }
+  };
+
+  var backgroundcolorfx = {
+    ref: "prop.background.color.color",
+    label: "Color",
+    type: "string",
+    expression: "optional",
+    defaultValue: "none",
+    show: function (data) {
+      if (data.prop.background.switch && data.prop.background.cssswitch != true && data.prop.background.switchfxpick != false) { return true; }
     }
   };
 
@@ -1544,7 +1572,9 @@ define(['qlik'], function (qlik, utils) {
         label: "Background",
         items: {
           backgroundswitch: backgroundswitch,
+          backgroundswitchfxpick: backgroundswitchfxpick,
           backgroundcolor: backgroundcolor,
+          backgroundcolorfx: backgroundcolorfx,
           backgroundcssswitch: backgroundcssswitch,
           backgroundcss: backgroundcss,
           backgroundpictureswitch: backgroundpictureswitch,
@@ -1931,7 +1961,7 @@ define(['qlik'], function (qlik, utils) {
         component: 'text'
       },
       paragraph3: {
-        label: 'Version: 0.1.4',
+        label: 'Version: 0.1.6',
         component: 'text'
       }
     }
