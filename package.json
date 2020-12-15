@@ -1,11 +1,12 @@
 {
   "name": "advanced-kpi",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Advanced-KPI is about creating a smart KPI object that fits to 90% of the needs of Qlik Sense users.",
   "homepage": "",
   "repository": "https://github.com/djaskowiak/advanced-kpi",
   "author": "Dennis Jaskowiak",
   "license": "MIT",
+  "qlikshare": "C://Qlik//QlikShare",
   "scripts": {
     "build": "gulp build",
     "build:zip": "gulp zip",

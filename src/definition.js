@@ -195,7 +195,10 @@ define(['qlik'], function (qlik, utils) {
     label: "Color",
     component: "color-picker",
     type: "object",
-    defaultValue: "#595959"
+    defaultValue: {
+      index: -1,
+      color: "#595959"
+    }
   };
 
   var measure1TrendSwitch = {
@@ -433,7 +436,10 @@ define(['qlik'], function (qlik, utils) {
     label: "Color",
     component: "color-picker",
     type: "object",
-    defaultValue: "#595959"
+    defaultValue: {
+      index: -1,
+      color: "#595959"
+    }
   };
 
   var measure2TrendSwitch = {
@@ -653,7 +659,10 @@ define(['qlik'], function (qlik, utils) {
     label: "Color",
     component: "color-picker",
     type: "object",
-    defaultValue: "#595959"
+    defaultValue: {
+      index: -1,
+      color: "#595959"
+    }
   };
 
   var measure3TrendSwitch = {
@@ -873,7 +882,10 @@ define(['qlik'], function (qlik, utils) {
     label: "Color",
     component: "color-picker",
     type: "object",
-    defaultValue: "#595959"
+    defaultValue: {
+      index: -1,
+      color: "#595959"
+    }
   };
 
   var measure4TrendSwitch = {
@@ -988,7 +1000,10 @@ define(['qlik'], function (qlik, utils) {
     label: "Measure-Color 1",
     component: "color-picker",
     type: "object",
-    defaultValue: "#989A97"
+    defaultValue: {
+      index: -1,
+      color: "#989A97"
+    }
   };
 
   var minichartColor2 = {
@@ -996,7 +1011,10 @@ define(['qlik'], function (qlik, utils) {
     label: "Measure-Color 2",
     component: "color-picker",
     type: "object",
-    defaultValue: "#007ACC",
+    defaultValue: {
+      index: -1,
+      color: "#007ACC"
+    },
     show: function (data) {
       if (data.qHyperCubeDef.qMeasures.length > 1) { return true; }
     }
@@ -1223,7 +1241,7 @@ define(['qlik'], function (qlik, utils) {
     }],
     defaultValue: false
   };
-  
+
   var backgroundswitchfxpick = {
     label: "Mode",
     component: "switch",
@@ -1246,6 +1264,10 @@ define(['qlik'], function (qlik, utils) {
     ref: "prop.background.color",
     label: "Color",
     component: "color-picker",
+    defaultValue: {
+      index: -1,
+      color: "#ffffff"
+    },
     type: "object",
     show: function (data) {
       //if (data.prop.background.switch && data.prop.background.cssswitch != true) { return true; }
@@ -1306,7 +1328,6 @@ define(['qlik'], function (qlik, utils) {
     ref: "prop.background.picture",
     type: "string",
     layoutRef: "prop.background.picture",
-    defaultValue: "false",
     show: function (data) {
       if (data.prop.background.pictureswitch && data.prop.background.cssswitch) { return true; }
     }
@@ -1957,7 +1978,7 @@ define(['qlik'], function (qlik, utils) {
         component: 'text'
       },
       paragraph3: {
-        label: 'Version: 0.1.6',
+        label: 'Version: 0.1.7',
         component: 'text'
       }
     }

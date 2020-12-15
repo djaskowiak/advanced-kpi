@@ -130,14 +130,20 @@ export default ['$scope', '$element', function ($scope, $element) {
           $scope.backgroundcss = JSON.parse($scope.layout.prop.background.css);
         }
         if ($scope.layout.prop.background.pictureswitch) {
-          $scope.backgroundcss["background-image"] = 'url(' + $scope.layout.prop.background.picture + ')';
+          if ($scope.layout.prop.background.css == '') {
+            $scope.backgroundcss = JSON.parse('{"background-image" : "url(' + $scope.layout.prop.background.picture + ')"}');
+          } else {
+            $scope.backgroundcss["background-image"] = 'url(' + $scope.layout.prop.background.picture + ')';
+          }
         }
       } else {
-        if($scope.layout.prop.background.switchfxpick){
+        if ($scope.layout.prop.background.switchfxpick) {
           $scope.backgroundcss = { "background-color": $scope.layout.prop.background.colorfx };
         }
-        if($scope.layout.prop.background.switchfxpick == false){
-          $scope.backgroundcss = { "background-color": $scope.layout.prop.background.color.color };
+        if ($scope.layout.prop.background.switchfxpick == false) {
+          if ($scope.layout.prop.background.color != null) {
+            $scope.backgroundcss = { "background-color": $scope.layout.prop.background.color.color };
+          }
         }
       }
     } catch (err) {

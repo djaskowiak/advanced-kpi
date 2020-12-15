@@ -7,54 +7,63 @@ var webpack = require('webpack');
 var pkg = require('./package.json');
 
 var DIST = './dist';
-var VERSION = process.env.VERSION || 'local-dev';
+
+/* true = directy distribute to extension folder in QS, false = just distribute to dist */
+var toQlikFolder = true;
+var VERSION = process.env.VERSION || '0.1.7';
+
+
+
+function copyExtFiles() {
+  return gulp.src('./dist/*').pipe(gulp.dest(`${pkg.qlikshare}/StaticContent/Extensions/${pkg.name}`));
+}
 
 gulp.task('qext', function () {
-	var qext = {
-		name: 'Advanced-KPI',
-		type: 'visualization',
-		description: pkg.description + '\nVersion: ' + VERSION,
-		version: VERSION,
-		icon: 'kpi',
-		preview: 'advanced-kpi.png',
-		keywords: 'qlik-sense, visualization, kpi',
-		author: pkg.author,
-		homepage: pkg.homepage,
-		license: pkg.license,
-		repository: pkg.repository,
-		dependencies: {
-			'qlik-sense': '>=5.5.x'
-		}
-	};
-	if (pkg.contributors) {
-		qext.contributors = pkg.contributors;
-	}
-	var src = require('stream').Readable({
-		objectMode: true
-	});
-	src._read = function () {
-		this.push(new gutil.File({
-			cwd: '',
-			base: '',
-			path: pkg.name + '.qext',
-			contents: Buffer.from(JSON.stringify(qext, null, 4))
-		}));
-		this.push(null);
-	};
-	return src.pipe(gulp.dest(DIST));
+  var qext = {
+    name: 'Advanced-KPI',
+    type: 'visualization',
+    description: pkg.description + '\nVersion: ' + VERSION,
+    version: VERSION,
+    icon: 'kpi',
+    preview: 'advanced-kpi.png',
+    keywords: 'qlik-sense, visualization, kpi',
+    author: pkg.author,
+    homepage: pkg.homepage,
+    license: pkg.license,
+    repository: pkg.repository,
+    dependencies: {
+      'qlik-sense': '>=5.5.x'
+    }
+  };
+  if (pkg.contributors) {
+    qext.contributors = pkg.contributors;
+  }
+  var src = require('stream').Readable({
+    objectMode: true
+  });
+  src._read = function () {
+    this.push(new gutil.File({
+      cwd: '',
+      base: '',
+      path: pkg.name + '.qext',
+      contents: Buffer.from(JSON.stringify(qext, null, 4))
+    }));
+    this.push(null);
+  };
+  return src.pipe(gulp.dest(DIST));
 });
 
-gulp.task('clean', function(){
+gulp.task('clean', function () {
   return del([DIST], { force: true });
 });
 
-gulp.task('zip-build', function(){
+gulp.task('zip-build', function () {
   return gulp.src(DIST + '/**/*')
     .pipe(zip(`${pkg.name}_${VERSION}.zip`))
     .pipe(gulp.dest(DIST));
 });
 
-gulp.task('add-assets', function(){
+gulp.task('add-assets', function () {
   return gulp.src('./assets/**/*').pipe(gulp.dest(DIST));
 });
 
@@ -74,9 +83,23 @@ gulp.task('webpack-build', done => {
   });
 });
 
-gulp.task('build',
+gulp.task('init build',
   gulp.series('clean', 'webpack-build', 'qext', 'add-assets')
 );
+
+if (toQlikFolder) {
+  gulp.task('build',
+    gulp.series('clean', 'webpack-build', 'qext', 'add-assets', copyExtFiles)
+  );
+} else {
+  gulp.task('build',
+    gulp.series('clean', 'webpack-build', 'qext', 'add-assets')
+  );
+}
+
+/* gulp.task('build',
+  gulp.series('clean', 'webpack-build', 'qext', 'add-assets', copyExtFiles)
+); */
 
 gulp.task('zip',
   gulp.series('build', 'zip-build')
