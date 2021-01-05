@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 var qlik = window.require('qlik');
-import $ from 'jquery';
+/* import $ from 'jquery'; */
 import picasso from 'picasso.js';
 import picassoQ from 'picasso-plugin-q';
 import chartdef from './chartdef';
@@ -147,6 +147,7 @@ export default ['$scope', '$element', function ($scope, $element) {
         }
       }
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.log(err);
     }
   }, true);
@@ -160,6 +161,7 @@ export default ['$scope', '$element', function ($scope, $element) {
         }
       }
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.log(err);
     }
   }, true);  

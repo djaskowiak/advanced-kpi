@@ -12,8 +12,6 @@ var DIST = './dist';
 var toQlikFolder = true;
 var VERSION = process.env.VERSION || '0.1.7';
 
-
-
 function copyExtFiles() {
   return gulp.src('./dist/*').pipe(gulp.dest(`${pkg.qlikshare}/StaticContent/Extensions/${pkg.name}`));
 }
@@ -41,6 +39,7 @@ gulp.task('qext', function () {
   var src = require('stream').Readable({
     objectMode: true
   });
+  // eslint-disable-next-line no-underscore-dangle
   src._read = function () {
     this.push(new gutil.File({
       cwd: '',
@@ -96,10 +95,6 @@ if (toQlikFolder) {
     gulp.series('clean', 'webpack-build', 'qext', 'add-assets')
   );
 }
-
-/* gulp.task('build',
-  gulp.series('clean', 'webpack-build', 'qext', 'add-assets', copyExtFiles)
-); */
 
 gulp.task('zip',
   gulp.series('build', 'zip-build')
