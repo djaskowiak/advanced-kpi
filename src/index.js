@@ -90,6 +90,14 @@ export default {
           if (layout.prop.actions.bookmark.switch) {
             app.bookmark.apply(layout.prop.actions.bookmark.name);
           }
+          //open URL
+          if (layout.prop.actions.url.switch) {
+            if(layout.prop.actions.url.newtabset) {
+              window.open(layout.prop.actions.url.set,'_blank');
+            } else {
+              window.open(layout.prop.actions.url.set,'_self');
+            }    
+          }  
         });
       } else {
         layout.prop.actions.hover = false;

@@ -1476,6 +1476,50 @@ define(['qlik'], function (qlik, utils) {
     }
   };
 
+  var actionsLinkSwitch = {
+    label: "Set Link/URL",
+    ref: "prop.actions.url.switch",
+    type: "string",
+    component: "switch",
+    options: [{
+      value: false,
+      label: "Off"
+    }, {
+      value: true,
+      label: "On"
+    }],
+    defaultValue: false
+  };
+
+  var actionsLinkNewTabSet = {
+    label: "open in a new Tab?",
+    ref: "prop.actions.url.newtabset",
+    type: "string",
+    component: "switch",
+    options: [{
+      value: false,
+      label: "Off"
+    }, {
+      value: true,
+      label: "On"
+    }],
+    defaultValue: true,
+    show: function (data) {
+      if (data.prop.actions.url.switch) { return true; }
+    }
+  };
+
+  var actionsLinkSet = {
+    label: "URL",
+    ref: "prop.actions.url.set",
+    type: "string",
+    expression: "optional",
+    defaultValue: "",
+    show: function (data) {
+      if (data.prop.actions.url.switch) { return true; }
+    }
+  };
+
   var actionsBookmarkSwitch = {
     label: "Apply Bookmark",
     ref: "prop.actions.bookmark.switch",
@@ -1904,7 +1948,7 @@ define(['qlik'], function (qlik, utils) {
               actionsVariableDropdown: actionsVariableDropdown,
               actionsVariableSet: actionsVariableSet,
               paragraph: {
-                label: 'A click on the kpi navigates sets a variable to a defined value',
+                label: 'A click on the kpi sets a variable to a defined value',
                 component: 'text'
               }
             }
@@ -1917,6 +1961,23 @@ define(['qlik'], function (qlik, utils) {
               actionsBookmarkDropdown: actionsBookmarkDropdown,
               paragraph: {
                 label: 'A click on the kpi applies the selected bookmark.',
+                component: 'text'
+              }
+            }
+          },
+          actionsLink: {
+            type: "items",
+            label: "Open URL",
+            items: {
+              actionsLinkSwitch: actionsLinkSwitch,
+              actionsLinkNewTabSet: actionsLinkNewTabSet,
+              actionsLinkSet: actionsLinkSet,
+              paragraph: {
+                label: "A click on the kpi opens the defined URL.",
+                component: 'text'
+              },
+              paragraph1: {
+                label: "Example: ='http://developer.qlik.com'",
                 component: 'text'
               }
             }
@@ -1978,7 +2039,7 @@ define(['qlik'], function (qlik, utils) {
         component: 'text'
       },
       paragraph3: {
-        label: 'Version: 0.1.7',
+        label: 'Version: 0.1.8',
         component: 'text'
       }
     }

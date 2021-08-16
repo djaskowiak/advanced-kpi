@@ -152,6 +152,7 @@ With the "**Actions**" section it is possible to define events that will be exec
 - "**Sheet-navigation**" - jumps to a defined worksheet
 - "**Set Variable**" - sets a variable to a defined value. (It's possible to use an expression to define the value)
 - "**Apply Bookmark**" - applies a selected bookmark
+- "**Open URL**" - opens a defined URL
 
 This actions can be combined. Just turn the dedicated switch to on to enable the function. Functions will be executed in a top-down order.
 
