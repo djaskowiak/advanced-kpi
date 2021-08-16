@@ -18,7 +18,7 @@ You can download the extension [here](https://github.com/djaskowiak/advanced-kpi
 
 [![Advanced KPI Object](https://raw.githubusercontent.com/djaskowiak/data/master/2019-12-05%2010_28_15-Window.png)](https://youtu.be/i2NlWX7plM4)
 
-You can [donwload](https://github.com/djaskowiak/advanced-kpi/raw/master/demo/Advanced-KPI%20examples.qvf) a Qlik Sense Demo app to see a couple of possible charts.
+You can [donwload](https://github.com/djaskowiak/advanced-kpi/raw/master/demo/Advanced-KPI%20examples%20v%200.1.8.qvf) a Qlik Sense Demo app to see a couple of possible charts.
 
 ![example 1](https://raw.githubusercontent.com/djaskowiak/data/master/example-kpi-1.png)
 
