@@ -10,7 +10,7 @@ var DIST = './dist';
 
 /* true = directy distribute to extension folder in QS, false = just distribute to dist */
 var toQlikFolder = true;
-var VERSION = process.env.VERSION || '0.1.8';
+var VERSION = process.env.VERSION || '0.1.9';
 
 function copyExtFiles() {
   return gulp.src('./dist/*').pipe(gulp.dest(`${pkg.qlikshare}/StaticContent/Extensions/${pkg.name}`));

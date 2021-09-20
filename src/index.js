@@ -74,7 +74,7 @@ export default {
 
     //Actions
     try {
-      if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch)) {
+      if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch || layout.prop.actions.url.switch)) {
         layout.prop.actions.hover = true;
         //eventlistener for Actions
         $element.find('.adv-kpi-overlay').on("click", function () {
@@ -92,12 +92,12 @@ export default {
           }
           //open URL
           if (layout.prop.actions.url.switch) {
-            if(layout.prop.actions.url.newtabset) {
-              window.open(layout.prop.actions.url.set,'_blank');
+            if (layout.prop.actions.url.newtabset) {
+              window.open(layout.prop.actions.url.set, '_blank');
             } else {
-              window.open(layout.prop.actions.url.set,'_self');
-            }    
-          }  
+              window.open(layout.prop.actions.url.set, '_self');
+            }
+          }
         });
       } else {
         layout.prop.actions.hover = false;

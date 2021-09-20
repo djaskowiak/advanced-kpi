@@ -1579,7 +1579,7 @@ define(['qlik'], function (qlik, utils) {
     expression: "optional",
     defaultValue: "Headline text",
     show: function (data) {
-      if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch) { return true; }
+      if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch || data.prop.actions.url.switch) { return true; }
     }
   };
 
@@ -1590,7 +1590,7 @@ define(['qlik'], function (qlik, utils) {
     expression: "optional",
     defaultValue: "Subline text",
     show: function (data) {
-      if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch) { return true; }
+      if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch || data.prop.actions.url.switch) { return true; }
     }
   };
 
@@ -1990,7 +1990,7 @@ define(['qlik'], function (qlik, utils) {
         label: 'If an action is set you can type in a head- and a subline to describe what is going to happen after clicking on the object.',
         component: 'text',
         show: function (data) {
-          if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch) { return true; }
+          if (data.prop.actions.variable.switch || data.prop.actions.jump.switch || data.prop.actions.bookmark.switch || data.prop.actions.url.switch) { return true; }
         }
       }
     }
@@ -2039,7 +2039,7 @@ define(['qlik'], function (qlik, utils) {
         component: 'text'
       },
       paragraph3: {
-        label: 'Version: 0.1.8',
+        label: 'Version: 0.1.9',
         component: 'text'
       }
     }
