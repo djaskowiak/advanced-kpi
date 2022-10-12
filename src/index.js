@@ -77,7 +77,7 @@ export default {
       if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch || layout.prop.actions.url.switch)) {
         layout.prop.actions.hover = true;
         //eventlistener for Actions
-        $element.find('.adv-kpi-overlay').on("click", function () {
+        $element.find('.adv-kpi-overlay').off("click").on("click", function () {
           //apply sheet-navigation
           if (layout.prop.actions.jump.switch) {
             qlik.navigation.gotoSheet(layout.prop.actions.jump.sheet);
