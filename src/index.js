@@ -34,10 +34,11 @@ export default {
     let app = qlik.currApp(this);
     const scope = this.$scope;
     this.$scope.isInEdit = this.options.interactionState == 2;
-
+    let OBJCT_ID = layout.qInfo.qId;
     //console.log(layout);
 
     //Display welcome message
+    
     scope.init = false;
     if (layout.prop.measure1.fx != "" || layout.prop.measure2.fx != "" || layout.prop.measure3.fx != "" || layout.prop.measure4.fx != "") {
       scope.init = false;
@@ -77,7 +78,7 @@ export default {
       if (!this.$scope.isInEdit && (layout.prop.actions.jump.switch || layout.prop.actions.variable.switch || layout.prop.actions.bookmark.switch || layout.prop.actions.url.switch)) {
         layout.prop.actions.hover = true;
         //eventlistener for Actions
-        $element.find('.adv-kpi-overlay').on("click", function () {
+        $element.find('.adv-kpi-overlay-'+OBJCT_ID).off("click").on("click", function () {
           //apply sheet-navigation
           if (layout.prop.actions.jump.switch) {
             qlik.navigation.gotoSheet(layout.prop.actions.jump.sheet);
